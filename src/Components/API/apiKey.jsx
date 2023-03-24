@@ -6,7 +6,6 @@ export const fetchDataImage = async () => {
     return response.json()
 }
 
-
 export const fetchDataInfo = async () => {
     const response = await fetch('https://api.spacexdata.com/v3/info')
     return response.json()
@@ -17,3 +16,9 @@ export const fetchDataHistory = async () => {
     const response = await fetch('https://api.spacexdata.com/v3/history')
     return response.json()
 }
+
+export const fetchDataMissions = async () => {
+    const response = await fetch('https://api.spacexdata.com/v3/missions')
+    return response.json()
+}
+

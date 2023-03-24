@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import About from './About'
 import Information from './Information'
-import { fetchDataImage } from "./API/apiKey"
-import "./Main.css"
+import { fetchDataImage } from './API/apiKey'
+import './Main.css'
 
 function Main() {
-
   const [dalyImage, setDalyImage] = useState(null)
   const [titleImage, setTitleImage] = useState('')
   const [dateImage, setDateImage] = useState('')
@@ -23,36 +22,51 @@ function Main() {
           }
         })
         .catch((error) => {
-          console.log(error);
-        });
-    };
-    getFetchDataImage();
-  }, []);
+          console.log(error)
+        })
+    }
+    getFetchDataImage()
+  }, [])
   return (
-    <div className=''>
-      <div className='h-screen bg-shuttle bg-cover bg-center'>
-        <div className='flex flex-col items-center'>
-          <h1 className='text-8xl self-start content-center text-white px-20'>Explore</h1>
+    <div className="">
+      <div className="h-screen bg-shuttle bg-cover bg-center">
+        <div className="flex flex-col items-center h-screen justify-center relative">
+          <div className="overlay absolute w-full h-full bg-alphaBlack"></div>
+          <h1 className="text-8xl font-bold self-start text-white px-20 relative z-10">
+            Explore
+          </h1>
+          <h1 className="text-8xl self-center font-bold text-black relative z-10">
+            Discover
+          </h1>
+          <h1 className="text-8xl self-end font-bold text-white px-20 relative z-10">
+            Beyond
+          </h1>
+          {/* <h1 className='text-8xl self-start content-center text-white px-20'>Explore</h1>
           <h1 className='text-8xl self-center text-white '>Discover</h1>
-          <h1 className='text-8xl self-end text-white px-20'>Beyond</h1>
+          <h1 className='text-8xl self-end text-white px-20'>Beyond</h1> */}
         </div>
       </div>
-      <div className='bg-white rounded-xl m-20 flex flex-col'>
-        <h1 className='text-4xl py-5 rounded-t-xl bg-black text-white'>Daly Image</h1>
-        <div className='flex flex-col'>
-          <h1 className='text-3xl py-3'>{titleImage}</h1>
-          <div className='flex flex-row justify-center gap-5 text-xl'>
-            <h3 className='text-xl'>© - {copyRightImage}</h3>
-            <h2 className='text-xl'>date: {dateImage}</h2>
+      <div className="bg-white rounded-xl m-20 flex flex-col">
+        <h1 className="text-4xl py-5 rounded-t-xl bg-black text-white">
+          Daly Image
+        </h1>
+        <div className="flex flex-col">
+          <h1 className="text-3xl py-3">{titleImage}</h1>
+          <div className="flex flex-row justify-center gap-5 text-xl">
+            <h3 className="text-xl">© - {copyRightImage}</h3>
+            <h2 className="text-xl">date: {dateImage}</h2>
           </div>
         </div>
-        <img className='mx-20 my-5 rounded-xl bg-no-repeat bg-center' src={dalyImage} alt="dalyImage" />
+        <img
+          className="mx-20 my-5 rounded-xl bg-no-repeat bg-center"
+          src={dalyImage}
+          alt="dalyImage"
+        />
       </div>
       <Information />
       <About />
-    </div >
+    </div>
   )
 }
-
 
 export default Main

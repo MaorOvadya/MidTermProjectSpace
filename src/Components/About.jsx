@@ -50,7 +50,7 @@ function About() {
             <h1 className='text-3xl text-white py-3'>About Section</h1>
             <Accordion className=''>
                 <Accordion.Item eventKey="0">
-                    <Accordion.Header className=''>About</Accordion.Header>
+                    <Accordion.Header><span className='text-xl'>About</span> </Accordion.Header>
                     <Accordion.Body>
                         <div className='flex flex-col items-center py-3'>
                             <p className='text-3xl'>{name}</p>
@@ -71,7 +71,8 @@ function About() {
                         <p className='text-3xl'>Summary</p>
                         <div className='flex flex-col justify-center items-center py-3'>
                             <p><span className='font-medium'>{summary}</span></p>
-                            <p>Website: <span className='font-medium'><a className='text-inherit underline no-underline' href={website}>{website}</a></span></p>
+                            <p>Website: <span className='font-medium'><a className='text-inherit underline no-underline' target="_blank"
+                                rel="noreferrer" href={website}>SpaceX</a></span></p>
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.8029562195397!2d-118.32864938431494!3d33.92047058064193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b5def02e41b1%3A0x2f47fabaa0eb0b07!2s12382%20Crenshaw%20Blvd%2C%20Hawthorne%2C%20CA%2090250%2C%20USA!5e0!3m2!1sen!2sca!4v1679609315080!5m2!1sen!2sca" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </Accordion.Body>
